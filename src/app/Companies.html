@@ -1,0 +1,20 @@
+<div class="footer">
+    <h1 class="pageTitle">Companies</h1>
+    <table class="grid">
+        <tr>
+        
+            <th>Logo</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>URL</th>
+        
+        </tr>
+        <tr class="gridRow" *ngFor="let item of iproducts?.rows | company" (click)="CompanyRowClick(item)">
+            <td><img alt="" src="{{item.imageHref}}" border="3" height="100" width="100" /></td>
+            <td>{{item.title}}</td>
+            <td>{{item.description}}</td>
+            <td><a href="{{item.url}}">{{item.url}}</a> </td>
+        </tr>
+    </table>
+    
+</div>
