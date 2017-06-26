@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var products_service_1 = require("./products.service");
 require("rxjs/add/operator/map");
+var router_1 = require("@angular/router");
 var Companies = (function () {
-    function Companies(_product) {
+    function Companies(_product, router) {
         this._product = _product;
+        this.router = router;
     }
     Companies.prototype.ngOnInit = function () {
         var _this = this;
@@ -22,7 +24,8 @@ var Companies = (function () {
     };
     Companies.prototype.CompanyRowClick = function (item) {
         localStorage.setItem("ItemDetails", JSON.stringify(item));
-        window.location.href = '/ProductDetails';
+        //window.location.href='/ProductDetails';
+        this.router.navigate(['/ProductDetails']);
     };
     Companies.prototype.DownloadPDF = function () {
         var doc = new jsPDF();
@@ -41,7 +44,7 @@ Companies = __decorate([
         templateUrl: 'app/Companies.html',
         providers: [products_service_1.ProductService],
     }),
-    __metadata("design:paramtypes", [products_service_1.ProductService])
+    __metadata("design:paramtypes", [products_service_1.ProductService, router_1.Router])
 ], Companies);
 exports.Companies = Companies;
 //# sourceMappingURL=companies.component.js.map

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';  
 import { IProduct } from './Products'; 
 import { IItem } from './ItemDetails'; 
+import {Router} from '@angular/router'
 @Component ({  
    selector: 'demo-app',  
    templateUrl: 'app/Technology.html', 
@@ -14,7 +15,7 @@ import { IItem } from './ItemDetails';
 })  
 export class technology  {  
     iproducts: IProduct[]; 
-   constructor(private _product: ProductService){ 
+   constructor(private _product: ProductService,private router: Router){ 
    } 
    ngOnInit() : void { 
       this._product.getproducts() 
@@ -23,6 +24,6 @@ export class technology  {
 
    CompanyRowClick(item:IItem){
        localStorage.setItem("ItemDetails",JSON.stringify(item));
-       window.location.href='/ProductDetails';
+       this.router.navigate(['/ProductDetails']);
    }
 } 

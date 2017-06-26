@@ -1,19 +1,19 @@
-<div class="footer">
+<div class="container">
     <h1 class="pageTitle">Technologies</h1>
-    <table class="grid">
-        <tr>
+    
+<div class="row">
         
-            <th>Logo</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>URL</th>
+    <div class="col-sm-2">Logo</div>
+    <div class="col-sm-1">Title</div>
+    <div class="col-sm-7">Description</div>
+    <div class="col-sm-2">URL</div>
         
-        </tr>
-        <tr class="gridRow" *ngFor="let item of iproducts?.rows | technology" (click)="CompanyRowClick(item)">
-            <td><img alt="" src="{{item.imageHref}}" border="3" height="100" width="100" /></td>
-            <td>{{item.title}}</td>
-            <td>{{item.description}}</td>
-            <td><a href="{{item.url}}">{{item.url}}</a> </td>
-        </tr>
-    </table>
+</div>
+<div class="row" *ngFor="let item of iproducts?.rows | technology" (click)="CompanyRowClick(item)">
+    <div class="col-sm-2"><img alt="" src="{{item.imageHref}}" border="3" height="100" width="100" /></div>
+    <div class="col-sm-1">{{item.title}}</div>
+    <div class="col-sm-7">{{item.description}}</div>
+    <div class="col-sm-2"><a href="{{item.url}}">{{item.url}}</a></div>
+</div>
+        
 </div>

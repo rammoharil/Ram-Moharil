@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';  
 import { IProduct } from './Products'; 
 import { IItem } from './ItemDetails'; 
+import {Router} from '@angular/router'
 declare let jsPDF:any;
 @Component ({  
    selector: 'demo-app',  
@@ -15,7 +16,7 @@ declare let jsPDF:any;
 })  
 export class Companies  {  
     iproducts: IProduct[]; 
-   constructor(private _product: ProductService){ 
+   constructor(private _product: ProductService,private router: Router){ 
    } 
    ngOnInit() : void { 
       this._product.getproducts() 
@@ -24,7 +25,8 @@ export class Companies  {
 
    CompanyRowClick(item:IItem){
        localStorage.setItem("ItemDetails",JSON.stringify(item));
-       window.location.href='/ProductDetails';
+       //window.location.href='/ProductDetails';
+       this.router.navigate(['/ProductDetails']);
    }
 
    public DownloadPDF()

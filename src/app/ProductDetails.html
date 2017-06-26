@@ -1,24 +1,25 @@
-<div class="footer" id="keywords-input">
+<div class="container" id="rammoharil">
     <h1 class="pageTitle">Details</h1>
-    <table class="grid">
-        <tr>
-            <td>Logo</td>
-            <td><img alt="" src="{{iproducts.imageHref}}" border="3" height="100" width="100" /></td>
-        </tr>
-        <tr>
-            <td>Title</td>
-            <td>{{iproducts.title}}</td>
-        </tr>
-        <tr>
-            <td>URL</td>
-            <td>{{iproducts.url}}</td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td>{{iproducts.description}}</td>
-        </tr>
-        <tr>
-            <td><button value="Download as PDF" (click)="DownloadPDF()">Download PDF</button> </td>
-        </tr>
-    </table>
+    
+        <div class="row">
+            <div class="col-sm-4">Logo</div>
+            <div class="col-sm-8"><img alt="" src="{{iproducts.imageHref}}" border="3" height="100" width="100" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">Title</div>
+            <div class="col-sm-8">{{iproducts.title}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">URL</div>
+            <div class="col-sm-8">{{iproducts.url}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">Description</div>
+            <div class="col-sm-8">{{iproducts.description}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8"><button id="printbtn" value="Download as PDF" (click)="DownloadPDF(iproducts)">Download PDF</button> </div>
+        </div>
+    
 </div>
