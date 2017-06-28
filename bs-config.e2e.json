@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "open": false,
   "logLevel": "silent",
@@ -12,3 +13,19 @@
     }
   }
 }
+=======
+{
+  "open": false,
+  "logLevel": "silent",
+  "port": 8080,
+  "server": {
+    "baseDir": "src",
+    "routes": {
+      "/node_modules": "node_modules"
+    },
+    "middleware": {
+      "0": null
+    }
+  }
+}
+>>>>>>> fcd28ffae3e4e3f06b6691ff9f0f05e195690282
