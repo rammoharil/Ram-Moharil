@@ -13,10 +13,10 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/do");
 var ProductService = (function () {
-    //private _producturl='https://dl.dropboxusercontent.com/s/nlpz9o8o5e1t602/Data.json/dl=0'; 
     function ProductService(_http) {
         this._http = _http;
-        this._producturl = 'app/Data.json';
+        //private _producturl='app/Data.json'; 
+        this._producturl = 'https://dl.dropboxusercontent.com/s/nlpz9o8o5e1t602/Data.json/dl=0';
     }
     ProductService.prototype.getproducts = function () {
         return this._http.get(this._producturl)

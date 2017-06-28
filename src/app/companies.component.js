@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var products_service_1 = require("./products.service");
 require("rxjs/add/operator/map");
+var router_1 = require("@angular/router");
 var Companies = (function () {
-    function Companies(_product) {
+    function Companies(_product, router) {
         this._product = _product;
+        this.router = router;
     }
     Companies.prototype.ngOnInit = function () {
         var _this = this;
@@ -21,17 +23,24 @@ var Companies = (function () {
             .subscribe(function (iproducts) { return _this.iproducts = iproducts; });
     };
     Companies.prototype.CompanyRowClick = function (item) {
+        var img = new Image();
+        img.setAttribute('crossOrigin', 'anonymous');
+        var dataURL;
+        img.src = item.imageHref;
+        img.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var context = canvas.getContext('2d');
+            context.drawImage(img, 0, 0);
+            dataURL = canvas.toDataURL('image/png');
+            localStorage.setItem('productImage', dataURL);
+        };
         localStorage.setItem("ItemDetails", JSON.stringify(item));
-        window.location.href = '/ProductDetails';
-    };
-    Companies.prototype.DownloadPDF = function () {
-        var doc = new jsPDF();
-        doc.text(20, 20, 'Hello world!');
-        doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
-        doc.addPage();
-        doc.text(20, 20, 'Do you like that?');
-        // Save the PDF
-        doc.save('Test.pdf');
+        setTimeout(function () {
+            //this.router.navigate(['/ProductDetails']);    
+            window.location.href = 'ProductDetails';
+        }, 2000);
     };
     return Companies;
 }());
@@ -41,7 +50,7 @@ Companies = __decorate([
         templateUrl: 'app/Companies.html',
         providers: [products_service_1.ProductService],
     }),
-    __metadata("design:paramtypes", [products_service_1.ProductService])
+    __metadata("design:paramtypes", [products_service_1.ProductService, router_1.Router])
 ], Companies);
 exports.Companies = Companies;
 //# sourceMappingURL=companies.component.js.map

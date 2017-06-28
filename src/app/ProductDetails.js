@@ -17,22 +17,30 @@ var ProductDetails = (function () {
     }
     ProductDetails.prototype.ngOnInit = function () {
         this.iproducts = JSON.parse(localStorage.getItem("ItemDetails"));
+        //var myimg = localStorage.getItem('productImage');
+        this.iproducts.imageHref = localStorage.getItem('productImage');
     };
-    ProductDetails.prototype.DownloadPDF = function () {
-        var pdf = new jsPDF();
-        var options = {
-            pagesplit: true
-        };
-        pdf.addHTML(this.el.nativeElement, 0, 0, options, function () {
-            pdf.save("test1.pdf");
+    ProductDetails.prototype.DownloadPDF = function (product) {
+        //html2canvas(document.getElementById('rammoharil'),{
+        html2canvas(document.body, {
+            onrendered: function (canvas) {
+                var img = canvas.toDataURL("image/png");
+                var doc = new jsPDF();
+                doc.addImage(img, "JPEG", 0, 0);
+                doc.save('ItWorks.pdf');
+            }
         });
+        // var printButton = document.getElementById("printbtn");
+        // var menu = document.getElementById("menu");
+        //     //Set the print button visibility to 'hidden' 
+        //     printButton.style.display = 'none';
+        //     menu.style.display = 'none';
+        // window.print();
+        // printButton.style.display = 'block';
+        // menu.style.display = 'block';
     };
     return ProductDetails;
 }());
-__decorate([
-    core_1.ViewChild('keywordsInput'),
-    __metadata("design:type", core_1.ElementRef)
-], ProductDetails.prototype, "el", void 0);
 ProductDetails = __decorate([
     core_1.Component({
         selector: 'demo-app',

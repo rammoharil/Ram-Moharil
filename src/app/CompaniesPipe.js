@@ -22,10 +22,8 @@ var CompanyPipe = (function () {
                 }
                 else {
                     var imageUrl = value[arrycount - 1].imageHref;
-                    var http = new XMLHttpRequest();
-                    http.open('HEAD', imageUrl, false);
-                    http.send();
-                    if (http.status == 404) {
+                    var pattern = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+                    if (!pattern.test(imageUrl)) {
                         value.splice(arrycount - 1, 1);
                     }
                 }

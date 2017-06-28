@@ -8,8 +8,8 @@ import { IProduct } from './Products';
 @Injectable() 
 export class ProductService { 
     
-   private _producturl='app/Data.json'; 
-   //private _producturl='https://dl.dropboxusercontent.com/s/nlpz9o8o5e1t602/Data.json/dl=0'; 
+   //private _producturl='app/Data.json'; 
+   private _producturl='https://dl.dropboxusercontent.com/s/nlpz9o8o5e1t602/Data.json/dl=0'; 
    constructor(private _http: Http){} 
    getproducts(): Observable<IProduct[]> {
 

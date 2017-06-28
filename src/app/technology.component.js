@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var products_service_1 = require("./products.service");
 require("rxjs/add/operator/map");
+var router_1 = require("@angular/router");
 var technology = (function () {
-    function technology(_product) {
+    function technology(_product, router) {
         this._product = _product;
+        this.router = router;
     }
     technology.prototype.ngOnInit = function () {
         var _this = this;
@@ -21,8 +23,24 @@ var technology = (function () {
             .subscribe(function (iproducts) { return _this.iproducts = iproducts; });
     };
     technology.prototype.CompanyRowClick = function (item) {
+        var img = new Image();
+        img.setAttribute('crossOrigin', 'anonymous');
+        var dataURL;
+        img.src = item.imageHref;
+        img.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var context = canvas.getContext('2d');
+            context.drawImage(img, 0, 0);
+            dataURL = canvas.toDataURL('image/png');
+            localStorage.setItem('productImage', dataURL);
+        };
         localStorage.setItem("ItemDetails", JSON.stringify(item));
-        window.location.href = '/ProductDetails';
+        setTimeout(function () {
+            //this.router.navigate(['/ProductDetails']);    
+            window.location.href = 'ProductDetails';
+        }, 2000);
     };
     return technology;
 }());
@@ -32,7 +50,7 @@ technology = __decorate([
         templateUrl: 'app/Technology.html',
         providers: [products_service_1.ProductService],
     }),
-    __metadata("design:paramtypes", [products_service_1.ProductService])
+    __metadata("design:paramtypes", [products_service_1.ProductService, router_1.Router])
 ], technology);
 exports.technology = technology;
 //# sourceMappingURL=technology.component.js.map
