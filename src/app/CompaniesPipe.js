@@ -42,4 +42,3 @@ CompanyPipe = __decorate([
     })
 ], CompanyPipe);
 exports.CompanyPipe = CompanyPipe;
-//# sourceMappingURL=CompaniesPipe.js.map
