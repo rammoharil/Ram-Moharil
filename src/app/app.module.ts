@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import { HttpModule } from '@angular/http';
-import {UniqueFilterPipe} from './UniqueFilterPipe';
+import {UniqueFilterPipe} from './filters/UniqueFilterPipe';
 
 //import {TechnologiesPipe} from './TechnologyPipe';
 import { Home } from './home.component';
@@ -14,8 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [ 
    { path: '', component: Home }, 
    { path: 'Home', component: Home }, 
-   { path: 'Companies', loadChildren: 'app/lazy.module#LazyModule' }, 
-   { path: 'Technologies', loadChildren: 'app/lazyTechno.module#LazyTechModule' }, 
+   { path: 'Companies', loadChildren: 'app/lazy/lazy.module#LazyModule' }, 
+   { path: 'Technologies', loadChildren: 'app/lazy/lazyTechno.module#LazyTechModule' }, 
    { path: 'ProductDetails', component: ProductDetails }, 
 ]; 
 

@@ -12,7 +12,7 @@ declare let html2canvas:any;
 declare let prodImage:HTMLImageElement;
 @Component ({  
    selector: 'demo-app',  
-   templateUrl: 'app/ProductDetails.html', 
+   templateUrl: 'app/Pages/ProductDetails.html', 
    providers: [ProductService],
 })  
 export class ProductDetails  {  

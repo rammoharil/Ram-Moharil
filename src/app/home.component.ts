@@ -9,7 +9,7 @@ import { IProduct } from './Products';
 
 @Component ({  
    selector: 'demo-app',  
-   templateUrl: 'app/Home.html', 
+   templateUrl: 'app/Pages/Home.html', 
    providers: [ProductService],
 })  
 export class Home  {  

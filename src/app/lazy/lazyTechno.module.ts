@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { technology }   from './technology.component';
+import { technology }   from '../technology.component';
 import { routing } from './lazyTechno.routing';
-import {TechnologiesPipe} from './TechnologyPipe';
+import {TechnologiesPipe} from '../filters/TechnologyPipe';
 
 @NgModule({
   imports: [routing,CommonModule],

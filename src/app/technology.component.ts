@@ -10,7 +10,7 @@ import { IItem } from './ItemDetails';
 import {Router} from '@angular/router'
 @Component ({  
    selector: 'demo-app',  
-   templateUrl: 'app/Technology.html', 
+   templateUrl: 'app/Pages/Technology.html', 
    providers: [ProductService],
 })  
 export class technology  {  

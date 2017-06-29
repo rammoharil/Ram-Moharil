@@ -47,7 +47,7 @@ var technology = (function () {
 technology = __decorate([
     core_1.Component({
         selector: 'demo-app',
-        templateUrl: 'app/Technology.html',
+        templateUrl: 'app/Pages/Technology.html',
         providers: [products_service_1.ProductService],
     }),
     __metadata("design:paramtypes", [products_service_1.ProductService, router_1.Router])

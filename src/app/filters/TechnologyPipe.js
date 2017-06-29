@@ -6,18 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var CompanyPipe = (function () {
-    function CompanyPipe() {
+var TechnologiesPipe = (function () {
+    function TechnologiesPipe() {
     }
-    CompanyPipe.prototype.transform = function (value, args) {
-        // Remove the duplicate elements
-        // let uniqueArray = value.filter(function (el, index, array) { 
-        //   return array.indexOf(el) == index;
-        // });
+    TechnologiesPipe.prototype.transform = function (value, args) {
+        //Take the rows matching technologies only
+        //If the image url is invalid, discard the row
         if (value != null) {
             var arrycount = value.length;
             while (arrycount > 0) {
-                if (value[arrycount - 1].category != "Companies") {
+                if (value[arrycount - 1].category != "Technologies") {
                     value.splice(arrycount - 1, 1);
                 }
                 else {
@@ -33,13 +31,13 @@ var CompanyPipe = (function () {
         var uniqueArray = value;
         return uniqueArray;
     };
-    return CompanyPipe;
+    return TechnologiesPipe;
 }());
-CompanyPipe = __decorate([
+TechnologiesPipe = __decorate([
     core_1.Pipe({
-        name: 'company',
+        name: 'technology',
         pure: false
     })
-], CompanyPipe);
-exports.CompanyPipe = CompanyPipe;
-//# sourceMappingURL=CompaniesPipe.js.map
+], TechnologiesPipe);
+exports.TechnologiesPipe = TechnologiesPipe;
+//# sourceMappingURL=TechnologyPipe.js.map

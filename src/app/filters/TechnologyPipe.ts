@@ -1,26 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'company',
+  name: 'technology',
   pure: false
 })
 
-export class CompanyPipe implements PipeTransform {
+export class TechnologiesPipe implements PipeTransform {
 
 transform(value: any, args?: any): any {
     
-    // Remove the duplicate elements
-    // let uniqueArray = value.filter(function (el, index, array) { 
-    //   return array.indexOf(el) == index;
-    // });
-    
+    //Take the rows matching technologies only
+    //If the image url is invalid, discard the row
     if(value != null)
     {
         var arrycount = value.length;
         while(arrycount > 0)
         {
             
-                if(value[arrycount-1].category != "Companies")
+                if(value[arrycount-1].category != "Technologies")
                 {
                     value.splice(arrycount-1,1);
                 }

@@ -9,7 +9,7 @@ import {Router} from '@angular/router'
 declare let jsPDF:any;
 @Component ({  
    selector: 'demo-app',  
-   templateUrl: 'app/Companies.html', 
+   templateUrl: 'app/Pages/Companies.html', 
    providers: [ProductService],
 })  
 export class Companies  {  

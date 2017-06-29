@@ -11,5 +11,7 @@
 
 .gridRow
 {
-  border-bottom: solid 1px #000;border-left: solid 1px #000;border-right: solid 1px #000;padding-bottom:10px;text-align: center;padding-top:10px;cursor: pointer
+  border-bottom: solid 1px #000;border-left: solid 1px #000;border-right: solid 1px #000;padding-bottom:10px;text-align: center;padding-top:10px;cursor: pointer;
+  
+
 }

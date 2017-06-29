@@ -9,7 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var http_1 = require("@angular/http");
-var UniqueFilterPipe_1 = require("./UniqueFilterPipe");
+var UniqueFilterPipe_1 = require("./filters/UniqueFilterPipe");
 //import {TechnologiesPipe} from './TechnologyPipe';
 var home_component_1 = require("./home.component");
 //import { Companies } from './companies.component'; 
@@ -19,8 +19,8 @@ var router_1 = require("@angular/router");
 var appRoutes = [
     { path: '', component: home_component_1.Home },
     { path: 'Home', component: home_component_1.Home },
-    { path: 'Companies', loadChildren: 'app/lazy.module#LazyModule' },
-    { path: 'Technologies', loadChildren: 'app/lazyTechno.module#LazyTechModule' },
+    { path: 'Companies', loadChildren: 'app/lazy/lazy.module#LazyModule' },
+    { path: 'Technologies', loadChildren: 'app/lazy/lazyTechno.module#LazyTechModule' },
     { path: 'ProductDetails', component: ProductDetails_1.ProductDetails },
 ];
 var AppModule = (function () {
