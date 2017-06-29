@@ -52,5 +52,4 @@ export class ProductDetails  {
     // printButton.style.display = 'block';
     // menu.style.display = 'block';
    }
-
 } 

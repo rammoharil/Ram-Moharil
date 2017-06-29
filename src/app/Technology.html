@@ -9,7 +9,7 @@
         
 </div>
 <div class="row gridRow" *ngFor="let item of iproducts?.rows | technology" (click)="CompanyRowClick(item)">
-    <div class="col-md-2"><img alt="" src="{{item.imageHref}}" border="3" height="100" width="100" /></div>
+    <div class="col-md-2"><img alt="" src="{{item.imageHref}}" height="120" width="170" /></div>
     <div class="col-md-1">{{item.title}}</div>
     <div class="col-md-5">{{item.description}}</div>
     <div class="col-md-4"><a href="{{item.url}}">{{item.url}}</a></div>
