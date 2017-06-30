@@ -28,6 +28,19 @@ transform(value: any, args?: any): any {
                             if(!pattern.test(imageUrl)) {
                                 value.splice(arrycount-1,1);
                             }
+                            else
+                            {
+                                var filename = imageUrl.split('/').pop();
+                                var arr = filename.split('?');
+                                filename = arr[0];
+                                console.log(filename);
+                                
+                                var imagePattern =/\.(gif|jpg|jpeg|tiff|png)$/i;
+                                if(!imagePattern.test(filename))
+                                {
+                                    value.splice(arrycount-1,1);
+                                }
+                            }
                 }    
             
             arrycount = arrycount -1;
